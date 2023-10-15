@@ -1,14 +1,14 @@
 #include <stdio.h>
 
 /**
- * * main - affiche la chaîne dans la fonction put
+ * * main - print the string in the put function
  * *
- * * Description : utilisation de la fonction main
- * * ce programme affiche "Programming is like building a multilingual puzzle"
- * * Retourne : 0
+ * * Description: using the main function
+ * * this program prints "Programming is like building a multilingual puzzle
+ * * Return: 0
  * */
 int main(void)
 {
-		puts("\"Programming is like building a multilingual puzzle");
+    puts("\"Programming is like building a multilingual puzzle");
 			return (0);
 }

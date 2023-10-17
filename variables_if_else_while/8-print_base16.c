@@ -1,25 +1,24 @@
 #include <stdio.h>
 
- /**
- * main - printing numbers from 0-9 with commas and space between them
+/**
+ * main - prints all the numbers of base 16 in lowercase
+ *
  * Description: using the main function
- * Program prints "0, 1, 2, 3, 4, 5, 6, 7, 8, 9"
+ * Prints all the numbers of base 16 in lowercase
  * Return: 0
  */
 
 int main(void)
-
 {
 	char c;
 
-	for (c = '0'; c <= '9'; c++)
+	for (c = 48 ; c <= 57 ; c++)
 	{
 		putchar(c);
-		if (c != '9')
-		{
-			putchar(',');
-			putchar(' ');
-		}
+	}
+	for (c = 'a'; c <= 'f'; c++)
+	{
+		putchar(c);
 	}
 	putchar('\n');
 	return (0);

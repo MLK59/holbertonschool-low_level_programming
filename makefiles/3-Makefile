@@ -1,25 +1,26 @@
-# Variables
 CC = gcc
 SRC = main.c school.c
 OBJ = $(SRC:.c=.o)
 NAME = school
 RM = rm -f
 
-# Rules
+.PHONY: all clean oclean fclean re
+
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
+	$(CC) -o $(NAME) $(OBJ)
+
+%.o: %.c
+	$(CC) -c -o $@ $<
 
 clean:
-	$(RM) *~$(NAME)
+	$(RM) *~ $(NAME)
 
 oclean:
 	$(RM) $(OBJ)
 
 fclean: clean oclean
+	$(RM) $(NAME)
 
 re: fclean all
-
-#Dependencies
-OBJ): $(SRC)

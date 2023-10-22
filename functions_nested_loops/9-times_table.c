@@ -1,42 +1,44 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * times_table - imprime la table de multiplication de 0 à 9
- * Description: utilise la fonction times_table
- */
-
+ *  * times_table - prints the 9 times table, starting with 0
+ *   */
 void times_table(void)
 {
-	int c;
-	int b;
-	int d;
+	int row, column, result;
 
-	for (b = 0; b <= 9; b++)
-	{
-		for (c = 0; c <= 9; c++)
-		{
-		d = b * c;
-			if (d >= 10)
-			{
-			_putchar((d / 10) + '0');
-			_putchar((d % 10) + '0');
-			 }
-			else
-				{
-				_putchar(d + '0');
-				_putchar(' ');
-				}
-			if (c != 9)
-				{
-				_putchar(',');
-				_putchar(' ');
-				}
-				else
-					{
-					_putchar('\n');
-					}
-		}
-						        
-	}
+	        for (row = 0; row <= 9; row++)
+			    {
+				            for (column = 0; column <= 9; column++)
+						            {
+								                result = row * column;
+
+										            if (column == 0)
+												                {
+															                _putchar(result + '0');
+																	            }
+											                else
+														            {
+																                    _putchar(' ');
+																		                    if (result >= 10)
+																					                    {
+																								                        _putchar(result / 10 + '0');
+																											                    _putchar(result % 10 + '0');
+																													                    }
+																				                    else
+																							                    {
+																										                        _putchar(' ');
+																													                    _putchar(result + '0');
+																															                    }
+																						                }
+
+													            if (column != 9)
+															                {
+																		                _putchar(',');
+																				            }
+														            }
+					            _putchar('\n');
+						        }
 }
 

@@ -1,7 +1,16 @@
-all: school
+all : prog
 
-school: main.c school.c
-		gcc main.c school.c -o school
+prog : main.o school.o
+		gcc -o prog main.o school.o
 
-clean:
-		rm -f school
+main.o : main.c
+	gcc -o main.o -c main.c
+
+school.o : school.c
+	gcc -o school.o -c school.c
+
+clean :
+	rm -rf school
+
+mrproper : clean
+	rm -rf prog

@@ -1,0 +1,25 @@
+compilateur
+CC = gcc
+
+# Options de compilation
+CFLAGS = -Wall -g
+
+# Fichiers source
+SRC_FILES = main.c fichier1.c fichier2.c
+
+# Fichiers objet
+OBJ_FILES = $(SRC_FILES:.c=.o)
+
+# Nom de l'exécutable
+EXECUTABLE = school
+
+# Règle par défaut : construire l'exécutable
+all: $(EXECUTABLE)
+
+# Règle pour construire l'exécutable
+$(EXECUTABLE): $(OBJ_FILES)
+	$(CC) $(CFLAGS) $^ -o $@
+
+# Règle pour compiler les fichiers source en fichiers objet
+%.o: %.c
+	$(CC)

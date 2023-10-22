@@ -1,8 +1,9 @@
 #include <stdio.h>
 
  /**
- * printing numbers from 0-9
+ * main - printing numbers from 0-9
  * Description: using the main function
+ * @c: the int for the paramaters of my function
  * Return: 0
  */
 

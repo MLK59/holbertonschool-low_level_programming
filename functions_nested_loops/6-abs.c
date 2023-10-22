@@ -1,11 +1,11 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * _abs - the absolute value of an integer
- * description c -  is the int that will use for the argument of the function
- * Return: 0
+ * _abs - Computes the absolute value of an integer.
+ * @c: The integer for which the absolute value is calculated.
+ *
+ * Return: The absolute value of the integer @c.
  */
-
 int _abs(int c)
 {
 		if (c > 0 || c == 0)

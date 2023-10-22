@@ -1,13 +1,14 @@
 #include "main.h"
 #include <unistd.h>
-
-/*
- * main - prints the alphabet, in lowercase
- * description : print a-z
- * print_alphabet_x10 - function to print abc 10 times
- * Return: 0.
+/**
+ * print_alphabet_x10 - Prints the alphabet in lowercase 10 times
+ *
+ * Description:
+ * This function prints the lowercase alphabet from 'a' to 'z' followed by
+ * a new line character. It repeats this pattern 10 times.
+ *
+ * Return: void (no return value)
  */
-
 void print_alphabet_x10(void)
 
 {

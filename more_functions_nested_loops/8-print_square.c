@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * print_square - function that checks for uppercase character.
- * @size: the int for the paramates 
+ * @size: the int for the paramater.
  * Return: 0
  */
 void print_square(int size)

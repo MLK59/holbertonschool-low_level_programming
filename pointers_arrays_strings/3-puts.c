@@ -5,6 +5,8 @@
  * @str: The input string to be printed.
  */
 
+int _putchar(char c);
+
 void _puts(char *str)
 {
 	int c;

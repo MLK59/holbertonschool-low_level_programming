@@ -5,6 +5,8 @@
  * @str: The input string to be printed.
  */
 
+int _putchar(char cint _putchar(char c)
+
 void print_rev(char *str)
 {
 	int c;

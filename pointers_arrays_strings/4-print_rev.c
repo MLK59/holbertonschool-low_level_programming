@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <unistd.h>
 /**
  * print_rev -  Prints a string reverse
  * @str: The input string to be printed.

@@ -1,4 +1,8 @@
 #include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
 /**
  * cap_string -  met en majuscule tous les mots d'une chaîne de caractères.
  *
@@ -32,7 +36,7 @@ char *cap_string(char *str)
 			|| str[i - 1] == ')' || str[i - 1] == '{' ||
 			str[i - 1] == '}'))
 		{
-			str[j++] = string_toupper(str[i]);
+			str[j++] = toupper(str[i]);
 		}
 		else
 		{

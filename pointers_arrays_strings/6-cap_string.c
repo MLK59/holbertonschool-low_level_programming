@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * cap_string: met en majuscule tous les mots d'une chaîne de caractères.
+ * cap_string -  met en majuscule tous les mots d'une chaîne de caractères.
  *
  * Prototype: char *cap_string(char *);
  * Séparateurs de mots: espace, tabulation,

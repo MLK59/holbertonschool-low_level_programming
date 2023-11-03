@@ -5,11 +5,12 @@
  * @s: parameter of function, une chaine de caractere de type char
  * Return: Always 0.
  */
+
 void _print_rev_recursion(char *s)
 {
 	if (*s == '\0')
 	{
-	putchar('\n');
+		putchar('\n');
 		return;
 	}
 	putchar(*s);

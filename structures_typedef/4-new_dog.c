@@ -6,10 +6,11 @@
 /**
  * new_dog - Creates a new dog
  * @name: Pointer to the name of the dog
- * @age: Age of the dog
+ * @age: Age dog
  * @owner: Pointer to the owner's name
  * Return: Pointer to the newly created dog structure, or NULL if it fails
  */
+
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *new_dog;
@@ -28,6 +29,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	free(new_dog);
 	return (NULL);
 	}
+
 	new_dog->age = age;
 	return (new_dog);
 }

@@ -1,3 +1,5 @@
+#include "lists.h"
+
 /**
  * list_len - calculates the length of a linked list
  * @h: pointer to the head of the list
@@ -9,7 +11,7 @@ size_t list_len(const list_t *h)
     /*
      * Variable to store the number of nodes
      */
-    count = 0;
+     int count = 0;
 
     /*
      * Iterate through the list, incrementing `count`
@@ -17,8 +19,8 @@ size_t list_len(const list_t *h)
      */
 		while (h != NULL)
 		{
-			count++;
-			h = h->next;
+		count++;
+		h = (*h).next;
     }
 
     /*
@@ -26,3 +28,5 @@ size_t list_len(const list_t *h)
 		 * which represents the length of the linked list.
      */
 		return (count);
+}
+

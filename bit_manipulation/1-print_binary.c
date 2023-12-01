@@ -8,7 +8,11 @@
 void print_binary(unsigned long int n)
 {
 	/** Check if the number is zero or if there are more bits to print */
-	if (n)
+	if (n < 2)
+	{
+		_putchar(n + '0');
+	}
+	else
 	{
 		/**
 		 * Recursively print the binary representation

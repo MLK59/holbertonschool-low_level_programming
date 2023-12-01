@@ -1,50 +1,28 @@
 #include "main.h"
-#include <string.h>
 
 /**
- * binary_to_uint - converts a binary number to an unsigned int
- * @b: pointer to a string of 0 and 1 chars
- * Return: unsigned int
+ * binary_to_uint - Converts a binary number to an unsigned int
+ * @b: The string representation of the binary number
+ *
+ * Return: the unsigned int representation of the binary number, otherwise,
+ * 0 if b is NULL or the string is invalid (all characters arent 1 or 0)
  */
-
 unsigned int binary_to_uint(const char *b)
 {
-	int bin_max_idx = 0;
-	int multiplier = 1;
-	unsigned int converted_int = 0;
+	int len, i;
+	unsigned int num = 0;
 
-	if (!b)
+	if (b == NULL)
 		return (0);
 
-	/**
-	 * Détermine l'indice du dernier caractère du string b.
-	 */
-
-	int bin_max_idx = strlen(b) - 1;
-
-	/**
-	 * Parcour le string b de la droite vers la gauche.
-	 */
-
-	while (bin_max_idx >= 0)
+	for (len = 0; *(b + len) != '\0'; len++)
 	{
-		/**
-		 * Vérifie que le caractère actuel est '0' ou '1'.
-		 * Si ce n'est pas le cas, la fonction retourne 0.
-		 */
-
-		if (b[bin_max_idx] != '0' && b[bin_max_idx] != '1')
+		if (!(b[len] == '0' || b[len] == '1'))
 			return (0);
-
-		/**
-		 * Ajoute le caractère actuel à la conversion,
-		 * multiplié par la puissance de 2 correspondante.
-		 */
-
-		converted_int += multiplier * (b[bin_max_idx] - '0');
-		multiplier <<= 1;
-		bin_max_idx--;
 	}
 
-	return (converted_int);
+	for (i = 0; *(b + i) != '\0'; i++)
+		num += ((*(b + i) - '0') * (1 << (len - i - 1)));
+
+	return (num);
 }

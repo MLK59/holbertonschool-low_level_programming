@@ -11,7 +11,7 @@ size_t list_len(const list_t *h)
     /*
      * Variable to store the number of nodes
      */
-     int count = 0;
+    int count = 0;
 
     /*
      * Iterate through the list, incrementing `count`

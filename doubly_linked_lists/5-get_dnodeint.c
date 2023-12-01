@@ -1,51 +1,39 @@
 #include "lists.h"
 
-
 /**
- * list_len - counts the number of elements in a doubly linked list
- * @h: pointer to the head node of the list
- *
- * Return: the number of elements in the list
+ * list_len - returns the number of elements in a linked list
+ * @h: struct
+ * Return: unsigned int
  */
 
 unsigned int list_len(dlistint_t *h)
 {
-	unsigned int count = 0;
+	unsigned int i = 0;
 
-	while (h != NULL)
+	while (h)
 	{
-
-		count++; /** Increment the counter for each node encountered */
-		h = h->next; /** Move to the next node in the list */
+		i++;
+		h = (*h).next;
 	}
-
-	return (count); /** Return the total number of nodes in the list */
+	return (i);
 }
 
 /**
- * get_dnodeint_at_index - retrieves the node at
- * a specified index in a doubly linked list
- * @head: pointer to the head node of the list
- * @index: the desired index of the node
- * Return: a pointer to the node at the specified index,
- * or NULL if the index is invalid
+ * *get_dnodeint_at_index - returns the nth node of a list
+ * @head: struct
+ * @index: index of the node
+ * Return: int
  */
+
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
-	unsigned int currentIndex = 0;
+	unsigned int i;
 
-	if (head != NULL || index > list_len(head))
-	{
-	/** Check for invalid input (NULL head or out-of-bounds index) */
+	if (!head || index > list_len(head))
 		return (NULL);
-	}
 
-	while (currentIndex < index)
-	{
-		/** Traverse the list until the desired index is reached */
-		head = head->next; /** Move to the next node in the list */
-		currentIndex++;
-	}
+	for (i = 0; i < index; i++)
+		head = head->next;
 
-	return (head); /** Return the node at the specified index */
+	return (head);
 }

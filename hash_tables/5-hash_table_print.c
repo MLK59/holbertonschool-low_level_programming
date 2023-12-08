@@ -1,74 +1,32 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_print - Prints a hash table.
- * @ht: A pointer to the hash table to print.
+ * hash_table_print - prints the keys and values of the hash table
  *
- * Description: Key/value pairs are printed in the order
- *         they appear in the array of the hash table.
- *
- * Vérifie si la table de hachage est NULL.
- * Si oui, elle retourne.
+ * @ht: pointer to the hash table
+ * Return: no return
  */
 void hash_table_print(const hash_table_t *ht)
-{	
-  /**
-   * Initialise un drapeau virgule pour suivre 
-   * si plusieurs éléments doivent être imprimés.
-   */
-	unsigned char comma_flag = 0;
+{
 	unsigned long int i;
-  /**
-   * Imprime '{'.
-   */
-  printf("{");
+	hash_node_t *tmp;
+	char *sep;
 
-  /**
-   * Itère sur le tableau de la table de hachage.
-   */
-  for (i = 0; i < ht->size; i++)
-  {
-	if (ht->array[i] != NULL) {
-	  /**
-	   * Vérifie si le drapeau virgule est défini sur 1.
-	   */
-	  if (comma_flag == 1)
-	  {
+	if (ht == NULL)
+		return;
 
-		printf(", ");
-	  }
+	printf("{");
+	sep = "";
 
-	  /**
-	   * Initialise un pointeur de nœud pour pointer 
-	   * sur le premier nœud dans l'index actuel.
-	   */
-	  hash_node_t *node = ht->array[i];
-
-	  /**
-	   * Imprime les paires clé/valeur.
-	   */
-	  while (node != NULL) {
-		/**
-		 * Imprime la clé du nœud.
-		 */
-		printf("'%s': '%s'", node->key, node->value);
-
-		/**
-		 * Déplace le pointeur de nœud vers le nœud suivant.
-		 */
-		node = node->next;
-
-		if (node != NULL)
+	for (i = 0; i < ht->size; i++)
+	{
+		tmp = ht->array[i];
+		while (tmp != NULL)
 		{
-		  printf(", ");
+			printf("%s'%s': '%s'", sep, tmp->key, tmp->value);
+			sep = ", ";
+			tmp = tmp->next;
 		}
-	  }
-
-	  /**
-	   * Met le drapeau virgule à 1.
-	   */
-	  comma_flag = 1;
 	}
-  }
-  printf("}\n");
+	printf("}\n");
 }

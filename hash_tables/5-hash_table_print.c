@@ -1,3 +1,5 @@
+#include "hash_tables.h"
+
 /**
  * hash_table_print - Prints a hash table.
  * @ht: A pointer to the hash table to print.
@@ -9,13 +11,13 @@
  * Si oui, elle retourne.
  */
 void hash_table_print(const hash_table_t *ht)
-{
+{	
   /**
    * Initialise un drapeau virgule pour suivre 
    * si plusieurs éléments doivent être imprimés.
    */
-  unsigned char comma_flag = 0;
-
+	unsigned char comma_flag = 0;
+	unsigned long int i;
   /**
    * Imprime '{'.
    */
@@ -24,7 +26,7 @@ void hash_table_print(const hash_table_t *ht)
   /**
    * Itère sur le tableau de la table de hachage.
    */
-  for (unsigned long int i = 0; i < ht->size; i++)
+  for (i = 0; i < ht->size; i++)
   {
 	if (ht->array[i] != NULL) {
 	  /**
